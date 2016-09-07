@@ -1,0 +1,48 @@
+div#navigation {
+    width: 15%;
+    font-size: large;
+    border-right: solid aqua 2px;
+}
+
+div#navigation ul li {
+    padding: 5px;
+}
+
+div#navigation ul li a.active {
+    background-color: aqua;
+    color: white;
+}
+
+div#navigation ul li:hover:not(.active) {
+    background-color: lightgray;
+    color: white;
+}
+
+div#content {
+    width: 70%;
+}
+
+div#scan_chain_table {
+    width: 100%;
+    height: 80%;
+    overflow: scroll;
+}
+
+div#message {
+    height: 20%;
+    width: 100%;
+    overflow: scroll;
+}
+
+div#buttons {
+    width: 15%;
+    border-left: solid aqua 2px;
+}
+
+div#buttons button {
+    width: 80%;
+}
+
+div#header {
+    border-bottom: solid aqua 2px;
+}

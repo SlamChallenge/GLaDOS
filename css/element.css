@@ -1,0 +1,41 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
+ul {
+    margin: 0 auto;
+    width: 100%;
+    padding: 0;
+    list-style-type: none; /* removes bullets */
+}
+
+ul li a {
+    display: block;
+    font-size: large;
+    text-decoration: none; /* remove underline */
+    color: black; /* remove purple visited */
+}
+
+button {
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: aqua;
+    /*color: violet;*/
+
+}
+
+table,th,td {
+    border: 1px solid black;
+    border-collapse: collapse; /* merges borders */
+}
+
+table tr:hover {
+	background-color: lightgray;
+}
+
+input:focus {
+	background: aqua;
+}

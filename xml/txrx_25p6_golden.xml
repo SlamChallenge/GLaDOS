@@ -1,0 +1,267 @@
+<REGISTERS>
+    <REG name="rx" address="01" length="280"> 
+        <FIELD name="abank_cml2cmos_pdwn_dc"        pos="000" width="01" value="0" definition="" />
+		<FIELD name="abank_ctle_pdwn_dc"            pos="001" width="01" value="0" definition="" />    
+		<FIELD name="abank_dac_pdwn_dc"             pos="002" width="01" value="0" definition="" />    
+		<FIELD name="abank_deserializer_pdwn_dc"    pos="003" width="01" value="0" definition="" />    
+		<FIELD name="abank_integrator_pdwn_dc"      pos="004" width="01" value="0" definition="" />
+		<FIELD name="abank_pr_pdwn_dc"              pos="005" width="01" value="0" definition="" />    
+		<FIELD name="abank_bist_en_dc"              pos="006" width="01" value="0" definition="" />    
+		<FIELD name="burnin_clk"                    pos="007" width="01" value="0" definition="" />    
+		<FIELD name="burnin_mode_dc"                pos="008" width="01" value="0" definition="" />
+		<FIELD name="cfg_demux2t4_mode"             pos="009" width="01" value="0" definition="" />    
+		<FIELD name="cfg_dfe12_dc"                  pos="010" width="01" value="0" definition="" />    
+		<FIELD name="cfg_dfehispd_en_dc"            pos="011" width="01" value="0" definition="" />    
+		<FIELD name="cfg_lte_en"                    pos="012" width="01" value="0" definition="" />
+		<FIELD name="cfg_peak_tune"                 pos="013" width="01" value="0" definition="" />    
+		<FIELD name="cfg_ioclk_sel_dc"              pos="014" width="02" value="00" definition="" />    
+		<FIELD name="bs_rxc_mwd_dc"                 pos="016" width="01" value="0" definition="" />    
+		<FIELD name="bs_rxc_reo_tst_dc"             pos="017" width="01" value="0" definition="" />
+		<FIELD name="bs_rxc_rtt_dc"                 pos="018" width="01" value="0" definition="" />    
+		<FIELD name="bs_rxc_txt_drv_en_dc"          pos="019" width="01" value="0" definition="" />    
+		<FIELD name="ioclk_slip_strobe"             pos="020" width="01" value="0" definition="" />    
+		<FIELD name="lane_invert_dc"                pos="021" width="01" value="0" definition="" />
+		<FIELD name="lane_pdwn_dc"                  pos="022" width="01" value="0" definition="" />    
+        <FIELD name="prbs_mode"                     pos="023" width="02" value="00" definition="" />   
+		<FIELD name="bist_data"                     pos="049" width="01" value="0" definition="" />    
+		<FIELD name="force_load_seed"               pos="050" width="01" value="0" definition="" />    
+		<FIELD name="prbs_seed"                     pos="051" width="01" value="0" definition="" />    
+		<FIELD name="rx_prbs_error_reset"           pos="052" width="01" value="0" definition="" />
+		<FIELD name="abank_h1cal_en_dc"             pos="053" width="01" value="0" definition="" />    
+		<FIELD name="abank_h1cal_dac_bin_dc"        pos="054" width="06" value="000000" definition="" />    
+		<FIELD name="abank_h1aratio_dac_bin_dc"     pos="060" width="07" value="0000000" definition="" />    
+		<FIELD name="abank_initloff_dc"             pos="067" width="01" value="0" definition="" />
+		<FIELD name="abank_integrator_cal_en_dc"    pos="068" width="01" value="0" definition="" />    
+		<FIELD name="hdac_dsbl_dc"                  pos="069" width="01" value="0" definition="" />    
+		<FIELD name="integrator_cal_sel_even_dc"    pos="070" width="01" value="0" definition="" />    
+		<FIELD name="integrator_cal_sel_p_dc"       pos="071" width="01" value="0" definition="" />
+		<FIELD name="integrator_cm_cal_en"          pos="072" width="01" value="0" definition="" />    
+		<FIELD name="abank_cm_coarse_bin_dc"        pos="073" width="04" value="0000" definition="" />    
+		<FIELD name="abank_even_cm_fine_bin_dc"     pos="077" width="05" value="00000" definition="" />    
+		<FIELD name="abank_odd_cm_fine_bin_dc"      pos="082" width="05" value="00000" definition="" />
+		<FIELD name="abank_amp_dac_en_dc"           pos="087" width="01" value="0" definition="" />    
+		<FIELD name="abank_amp_pol_dc"              pos="088" width="01" value="0" definition="" />    
+        <FIELD name="abank_amp_dac_bin_dc"          pos="089" width="07" value="0000000" definition="" />    
+        <FIELD name="h1spdata"                      pos="096" width="01" value="0" definition="" />
+		<FIELD name="spe1"                          pos="097" width="01" value="0" definition="" />    
+		<FIELD name="abank_even_h1_pol_dc"          pos="098" width="01" value="0" definition="" />    
+		<FIELD name="abank_even_h1_dac_bin_dc"      pos="099" width="06" value="000000" definition="" />    
+		<FIELD name="abank_even_h2_pol_dc"          pos="105" width="01" value="0" definition="" />
+		<FIELD name="abank_even_h2_dac_bin_dc"      pos="106" width="05" value="00000" definition="" />    
+		<FIELD name="abank_even_h3_pol_dc"          pos="111" width="01" value="0" definition="" />    
+		<FIELD name="abank_even_h3_dac_bin_dc"      pos="112" width="04" value="0000" definition="" />    
+		<FIELD name="abank_even_h4_pol_dc"          pos="116" width="01" value="0" definition="" />
+		<FIELD name="abank_even_h4_dac_bin_dc"      pos="117" width="04" value="0000" definition="" />    
+		<FIELD name="abank_even_h5_pol_dc"          pos="121" width="01" value="0" definition="" />    
+		<FIELD name="abank_even_h5_dac_bin_dc"      pos="122" width="04" value="0000" definition="" />    
+		<FIELD name="abank_odd_h1_pol_dc"           pos="126" width="01" value="0" definition="" />    
+		<FIELD name="abank_odd_h1_dac_bin_dc"       pos="127" width="06" value="000000" definition="" />    
+		<FIELD name="abank_odd_h2_pol_dc"           pos="133" width="01" value="0" definition="" />
+		<FIELD name="abank_odd_h2_dac_bin_dc"       pos="134" width="05" value="00000" definition="" />    
+		<FIELD name="abank_odd_h3_pol_dc"           pos="139" width="01" value="0" definition="" />    
+		<FIELD name="abank_odd_h3_dac_bin_dc"       pos="140" width="04" value="0000" definition="" />    
+		<FIELD name="abank_odd_h4_pol_dc"           pos="144" width="01" value="0" definition="" />
+		<FIELD name="abank_odd_h4_dac_bin_dc"       pos="145" width="04" value="0000" definition="" />    
+		<FIELD name="abank_odd_h5_pol_dc"           pos="149" width="01" value="0" definition="" />    
+		<FIELD name="abank_odd_h5_dac_bin_dc"       pos="150" width="04" value="0000" definition="" />    
+        <FIELD name="abank_h6_pol_dc"               pos="154" width="01" value="0" definition="" />    
+		<FIELD name="abank_h6_dac_bin_dc"           pos="155" width="04" value="0000" definition="" />    
+        <FIELD name="abank_h7_pol_dc"               pos="159" width="01" value="0" definition="" />    
+		<FIELD name="abank_h7_dac_bin_dc"           pos="160" width="04" value="0000" definition="" />    
+        <FIELD name="abank_h8_pol_dc"               pos="164" width="01" value="0" definition="" />    
+		<FIELD name="abank_h8_dac_bin_dc"           pos="165" width="04" value="0000" definition="" />    
+        <FIELD name="abank_h9_pol_dc"               pos="169" width="01" value="0" definition="" />    
+		<FIELD name="abank_h9_dac_bin_dc"           pos="170" width="04" value="0000" definition="" />    
+        <FIELD name="abank_h10_pol_dc"              pos="174" width="01" value="0" definition="" />    
+        <FIELD name="abank_h10_dac_bin_dc"          pos="175" width="04" value="0000" definition="" />    
+        <FIELD name="abank_h11_pol_dc"              pos="179" width="01" value="0" definition="" />    
+		<FIELD name="abank_h11_dac_bin_dc"          pos="180" width="04" value="0000" definition="" />    
+        <FIELD name="abank_h12_pol_dc"              pos="184" width="01" value="0" definition="" />    
+		<FIELD name="abank_h12_dac_bin_dc"          pos="185" width="04" value="0000" definition="" />    
+        <FIELD name="abank_even_l0_offset_pol_dc"     pos="189" width="01" value="0" definition="" />
+        <FIELD name="abank_even_l0_offset_dac_bin_dc" pos="190" width="06" value="000000" definition="" />    
+        <FIELD name="abank_even_l1_offset_pol_dc"     pos="196" width="01" value="0" definition="" />
+        <FIELD name="abank_even_l1_offset_dac_bin_dc" pos="197" width="06" value="000000" definition="" />    
+        <FIELD name="abank_odd_l0_offset_pol_dc"      pos="203" width="01" value="0" definition="" />
+        <FIELD name="abank_odd_l0_offset_dac_bin_dc"  pos="204" width="06" value="000000" definition="" />    
+        <FIELD name="abank_odd_l1_offset_pol_dc"      pos="210" width="01" value="0" definition="" />
+        <FIELD name="abank_odd_l1_offset_dac_bin_dc"  pos="211" width="06" value="000000" definition="" />    
+		<FIELD name="ioclk_slip"                    pos="217" width="02" value="00" definition="" />    
+		<FIELD name="abank_ctle_gain_bin_dc"        pos="219" width="04" value="0000" definition="" />    
+        <FIELD name="ctle_peak_bin"                 pos="223" width="05" value="00000" definition="" />
+		<FIELD name="seed"                          pos="232" width="24" value="000000000000000000000000" definition="" />    
+        <FIELD name="seed_val"                      pos="256" width="24" value="000000000000000000000000" definition="" />
+    </REG>
+    <REG name="pll" address="04" length="128"> 
+		<FIELD name="analogtune"             pos="000" width="10" value="0000000000" />
+		<FIELD name="atstsel"                pos="011" width="04" value="0000"          definition="Backwards" />
+		<FIELD name="bgoffset"               pos="015" width="04" value="0010"          definition="Bandgap Offset: Backwards" />
+		<FIELD name="ccalbandsel"            pos="019" width="04" value="0000"          definition="Band Select" />
+		<FIELD name="ccalfmax"               pos="023" width="01" value="0"             definition="NONE" />
+		<FIELD name="ccalfmin"               pos="024" width="01" value="0"             definition="NONE" />
+		<FIELD name="ccalload"               pos="025" width="01" value="0"             definition="NONE" />
+		<FIELD name="ccalcvhold"             pos="026" width="01" value="0"             definition="CVHold. Tie filter nodes together. Crossbar" />
+		<FIELD name="ccalmeth"               pos="027" width="01" value="0"             definition="NONE" />
+		<FIELD name="cpisel"                 pos="028" width="03" value="011"           definition="CPI Select" />
+		<FIELD name="csel"                   pos="031" width="03" value="000"           definition="NONE" />
+		<FIELD name="divselfb"               pos="034" width="09" value="110101100"     definition="Feedback Divider Select." />
+		<FIELD name="enable"                 pos="043" width="01" value="1"             definition="NONE" />
+		<FIELD name="reset"                  pos="044" width="01" value="0"             definition="NONE" />
+		<FIELD name="pclkdifsel"             pos="045" width="01" value="1"             definition="NONE" />
+		<FIELD name="pclksel"                pos="046" width="02" value="11"            definition="0(pllout), 1(refclk), 2(div6 pllout), 3,(fbclk)" />
+		<FIELD name="burn_in"                pos="048" width="01" value="0"             definition="" />
+		<FIELD name="pllbypassn"             pos="049" width="01" value="1"             definition="NONE" />
+		<FIELD name="rdiv"                   pos="050" width="04" value="0000"          definition="Must be 0, else we will use the refclk divider." />
+		<FIELD name="rsel"                   pos="054" width="02" value="00"            definition="NONE" />
+		<FIELD name="selpfdpw"               pos="056" width="01" value="0"             definition="NONE" />
+		<FIELD name="seld2spr"               pos="057" width="01" value="0"             definition="NONE" />
+		<FIELD name="spediv"                 pos="058" width="05" value="11110"         definition="NONE" />
+		<FIELD name="selprefb"               pos="063" width="01" value="1"             definition="NONE" />
+		<FIELD name="selprespe"              pos="064" width="01" value="0"             definition="NONE" />
+		<FIELD name="vcosel"                 pos="065" width="01" value="0"             definition="0(LC Tank), 1(Ring)" />
+		<FIELD name="vcorange"               pos="066" width="02" value="10"            definition="0x(Low Speed - 26G,20G,16G) 1x(high speed - 26G)" />
+		<FIELD name="cmlen"                  pos="068" width="01" value="0"             definition="NONE" />
+		<FIELD name="vregenable_n"           pos="069" width="01" value="0"             definition="Voltage Regulator Enable. Active Low" />
+		<FIELD name="vregbypass"             pos="070" width="01" value="0"             definition="Voltage Regulator Bypass." />
+		<FIELD name="syncen"                 pos="071" width="01" value="1"             definition="NONE" />
+		<FIELD name="calreq"                 pos="072" width="01" value="0"             definition="NONE" />
+		<FIELD name="calrecal"               pos="073" width="01" value="0"             definition="NONE" />
+		<FIELD name="func_scan_in"           pos="074" width="01" value="0"             definition="NONE" />
+		<FIELD name="pll_ccflush_dc"         pos="075" width="01" value="0"             definition="NONE" />
+		<FIELD name="pll_se_2"               pos="076" width="01" value="0"             definition="NONE" />
+		<FIELD name="lcb_gptr_sl_hld_2"      pos="077" width="01" value="0"             definition="NONE" />
+		<FIELD name="pll_sl_hld_2"           pos="078" width="01" value="0"             definition="NONE" />
+		<FIELD name="scan_diag_dc"           pos="079" width="01" value="0"             definition="NONE" />
+		<FIELD name="sdis_dc_n"              pos="080" width="01" value="0"             definition="NONE" />
+		<FIELD name="gptr_scan_in"           pos="081" width="01" value="0"             definition="NONE" />
+		<FIELD name="pll_muxsel_dc"          pos="082" width="01" value="0"             definition="NONE" />
+		<FIELD name="async_tclk"             pos="083" width="01" value="0"             definition="NONE" />
+		<FIELD name="iref_burnin_mode"       pos="112" width="01" value="0"             definition="NONE" />
+		<FIELD name="iref_bypass"            pos="113" width="01" value="0"             definition="NONE" />
+		<FIELD name="iref_res_dac"           pos="114" width="03" value="000"           definition="NONE" />
+		<FIELD name="iref_lt"                pos="117" width="01" value="0"             definition="NONE" />
+		<FIELD name="iref_pdwn"              pos="118" width="01" value="0"             definition="NONE" />
+		<FIELD name="iqgen_power_down"       pos="119" width="01" value="0"             definition="NONE" />
+		<FIELD name="iqgen_half_rate_mode"   pos="120" width="01" value="0"             definition="NONE" />
+		<FIELD name="iqgen_freq_sel"         pos="121" width="01" value="0"             definition="NONE" />
+		<FIELD name="iqcor_en"               pos="122" width="01" value="0"             definition="NONE" />
+		<FIELD name="iqspd_ctl"              pos="123" width="02" value="00"            definition="NONE" />
+		<FIELD name="iofrx_clkdist_en"       pos="125" width="01" value="0"             definition="NONE" />
+    </REG>
+    <REG name="rx_control" address="06" length="16"> 
+        <FIELD name="rx_edge_track_en"  pos="00" width="01" value="0"/>
+        <FIELD name="rx_compare_zeros"  pos="04" width="01" value="0"/>
+        <FIELD name="rx_pr_load"        pos="10" width="06" value="000000"/>
+        <FIELD name="rx_pattern_filter" pos="16" width="04" value="0000"/>
+        <FIELD name="rx_pattern_mask"   pos="20" width="04" value="0000"/>
+    </REG>
+    <REG name="rx_config" address="07" length="32"> 
+        <FIELD name="rx_fifo_delay"  pos="00" width="03" value="000"/>
+        <FIELD name="rx_pr_filter"   pos="03" width="02" value="00"/>
+        <FIELD name="rx_open_loop"   pos="05" width="01" value="0"/>
+        <FIELD name="rx_wobble_a"    pos="06" width="01" value="0"/>
+        <FIELD name="rx_wobble_b"    pos="07" width="01" value="0"/>
+        <FIELD name="rx_wobble_e"    pos="08" width="01" value="0"/>
+        <FIELD name="rx_rev_pr"      pos="09" width="01" value="0"/>
+        <FIELD name="rx_swap_iq_pol" pos="10" width="01" value="0"/>
+        <FIELD name="rx_output_clk"  pos="11" width="02" value="00"/>
+        <FIELD name="rx_pr_a_adder"  pos="16" width="08" value="00000000"/>
+        <FIELD name="rx_pr_b_adder"  pos="24" width="08" value="00000000"/>   
+    </REG>
+    <REG name="setup" address="08" length="16"> 
+        <FIELD name="prbs_mode"  pos="00" width="02" value="00"/>
+        <FIELD name="use_udp"  pos="02" width="01" value="0"/>
+        <FIELD name="invert_unload"  pos="03" width="01" value="0"/>
+        <FIELD name="fast_read_en"  pos="04" width="01" value="0"/>
+        <FIELD name="test_out"  pos="05" width="03" value="000"/>
+        <FIELD name="tx_en"  pos="08" width="01" value="0"/>
+        <FIELD name="pll_en"  pos="09" width="01" value="0"/>
+        <FIELD name="ioo_en"  pos="10" width="01" value="0"/>
+        <FIELD name="iof_en"  pos="11" width="01" value="0"/>
+        <FIELD name="miso_alt"  pos="14" width="02" value="00"/>
+    </REG>
+    <REG name="tx_udp" address="11" length="64">
+        <FIELD name="udp"  pos="00" width="64" value="0000000000000000000000000000000000000000000000000000000000000000"/>
+    </REG>    
+    <REG name="tx" address="12" length="160"> 
+		<FIELD name="txc_unload_clk_disable_iox16"  pos="000" width="01" value="1"                definition="" />
+		<FIELD name="bs_txc_reo"                    pos="001" width="01" value="0"                definition="" />
+		<FIELD name="burnin_mode_dc"                pos="002" width="01" value="0"                definition="" />
+		<FIELD name="txc_dctest"                    pos="003" width="01" value="0"                definition="" />
+		<FIELD name="en_nseg_main"                  pos="004" width="07" value="1111111"          definition="Enable Main N-Segments" />    
+		<FIELD name="en_nseg_marginpd"              pos="011" width="08" value="11111111"         definition="Enable Main N-Segments" />    
+		<FIELD name="en_nseg_marginpu"              pos="019" width="08" value="11111111"         definition="Enable Main N-Segments" />    
+		<FIELD name="en_nseg_post"                  pos="027" width="07" value="1111111"          definition="Enable Main N-Segments" />    
+		<FIELD name="en_nseg_pre"                   pos="034" width="05" value="11111"            definition="Enable Main N-Segments" />    
+        <FIELD name="en_pseg_main"                  pos="039" width="07" value="1111111"          definition="Enable Main N-Segments" />    
+		<FIELD name="en_pseg_marginpd"              pos="046" width="08" value="11111111"         definition="Enable Main N-Segments" />    
+		<FIELD name="en_pseg_marginpu"              pos="054" width="08" value="11111111"         definition="Enable Main N-Segments" />    
+		<FIELD name="en_pseg_post"                  pos="062" width="07" value="1111111"          definition="Enable Main N-Segments" />    
+		<FIELD name="en_pseg_pre"                   pos="069" width="05" value="11111"            definition="Enable Main N-Segments" />    
+		<FIELD name="sel_nseg_marginpd"              pos="074" width="08" value="00000000"         definition="Enable Main N-Segments" />    
+		<FIELD name="sel_nseg_post"                  pos="082" width="07" value="0000000"          definition="Enable Main N-Segments" />    
+		<FIELD name="sel_nseg_pre"                   pos="089" width="05" value="00000"            definition="Enable Main N-Segments" />    
+		<FIELD name="sel_pseg_marginpu"              pos="094" width="08" value="00000000"         definition="Enable Main N-Segments" />    
+		<FIELD name="sel_pseg_post"                  pos="102" width="07" value="0000000"          definition="Enable Main N-Segments" />    
+		<FIELD name="sel_pseg_pre"                   pos="109" width="05" value="00000"            definition="Enable Main N-Segments" />    
+        <FIELD name="tdr_txc_enable_dc"              pos="114" width="01" value="0"                definition="Enable Tx N Output" />
+        <FIELD name="tdr_txc_nref_dc"                pos="115" width="08" value="00000000"         definition="Enable Tx N Output" />
+        <FIELD name="tdr_txc_pad_sel_dc"             pos="123" width="01" value="0"                definition="Enable Tx N Output" />
+        <FIELD name="tdr_txc_pulse_iox16"            pos="124" width="01" value="0"                definition="Enable Tx N Output" />
+		<FIELD name="txc_drv_boost_en"              pos="125" width="01" value="1"                definition="Enable Tx AC Boost" />
+		<FIELD name="txc_drv_boost_tst_en"          pos="126" width="01" value="0"                definition="Enable Tx AC Boost" />
+        <FIELD name="txc_drv_en_n"                  pos="127" width="01" value="1"                definition="Enable Tx N Output" />
+		<FIELD name="txc_drv_en_p"                  pos="128" width="01" value="1"                definition="Enable Tx P Output" />    
+		<FIELD name="txc_prbs_clear"                pos="129" width="01" value="0"                definition="Clear Tx PRBS Checker" />
+		<FIELD name="txc_prbs_enable"               pos="130" width="01" value="0"                definition="Enable Tx PRBS Checker" />
+		<FIELD name="txc_rxcal"                     pos="131" width="01" value="0"                definition="Enable Tx PRBS Checker" />
+		<FIELD name="txc_sst_ctl"                   pos="132" width="01" value="0"                definition="Enable Tx PRBS Checker" />
+		<FIELD name="txc_unload_sel"                pos="133" width="03" value="000"              definition="Enable Tx PRBS Checker" />
+		<FIELD name="txc_en_all"                    pos="136" width="01" value="0"                definition="Enable Tx PRBS Checker" />
+    
+    </REG>
+    <REG name="rx_command" address="14" length="8">
+        <FIELD name="cmd"  pos="00" width="08" value="00000000"/>
+    </REG>
+
+    <REG name="main" address="64" length="1024"><FIELD name="main"  pos="00" width="1024"/></REG>
+    <REG name="alt" address="65" length="1024"><FIELD name="alt"  pos="00" width="1024"/></REG>
+    <REG name="edge" address="66" length="1024"><FIELD name="edge"  pos="00" width="1024"/></REG>
+    <REG name="xor" address="67" length="1024"><FIELD name="xor"  pos="00" width="1024"/></REG>
+    <REG name="status" address="68" length="128">
+        <FIELD name="prbs_seed"       pos="00" width="24" value="000000000000000000000000"/>
+        <FIELD name="latency"         pos="24" width="08" value="00000000"/>
+        <FIELD name="error_count"     pos="32" width="16" value="0000000000000000"/>
+        <FIELD name="ber_in_progress" pos="48" width="01" value="0"/>
+        <FIELD name="txc_bs_rdi_n_dc" pos="50" width="01" value="0"/>
+        <FIELD name="txc_bs_rdi_p_dc" pos="51" width="01" value="0"/>
+        <FIELD name="ioorx_rxc_bs_rdi_n_dc" pos="52" width="01" value="0"/>
+        <FIELD name="ioorx_rxc_bs_rdi_p_dc" pos="53" width="01" value="0"/>
+        <FIELD name="txc_prbs_err_det_dc" pos="54" width="01" value="0"/>
+        <FIELD name="txc_prbs_activity_det_dc" pos="55" width="01" value="0"/>
+        <FIELD name="txc_tdr_comp_out_dc" pos="56" width="01" value="0"/>
+        <FIELD name="iof_prbs_sync_done" pos="60" width="01" value="0"/>
+        <FIELD name="pll_lock_detect" pos="61" width="01" value="0"/>
+        <FIELD name="pll_ccalcomp" pos="62" width="01" value="0"/>
+        <FIELD name="pll_ccalerr" pos="63" width="01" value="0"/>
+        <FIELD name="pll_bandsel" pos="64" width="04" value="0000"/>
+        <FIELD name="iof_lock_active" pos="72" width="01" value="0"/>
+        <FIELD name="pr_pos" pos="74" width="06" value="000000"/>
+        <FIELD name="pr_hist_hi" pos="82" width="06" value="000000"/>
+        <FIELD name="pr_hist_mid" pos="90" width="06" value="000000"/>
+        <FIELD name="pr_hist_lo" pos="98" width="06" value="000000"/>
+        <FIELD name="ctle_running" pos="104" width="01" value="0"/>
+        <FIELD name="current_ctle_val" pos="107" width="05" value="00000"/>
+        <FIELD name="error_check" pos="112" width="08" value="00000000"/>
+        <FIELD name="pll_syncout" pos="120" width="01" value="0"/>
+        <FIELD name="pll_func_scan_out" pos="121" width="01" value="0"/>
+        <FIELD name="pll_gptr_scan_out" pos="122" width="01" value="0"/>
+        <FIELD name="iofrx_dfeobs" pos="123" width="01" value="0"/>
+        <FIELD name="iofrx_rxc_bs_rdi_padn_dc" pos="124" width="01" value="0"/>
+        <FIELD name="iofrx_rxc_bs_rdi_padp_dc" pos="125" width="01" value="0"/>
+        <FIELD name="iofrx_rx_prbs_error" pos="126" width="01" value="0"/>
+        <FIELD name="iofrx_serdata_out" pos="127" width="01" value="0"/>
+    </REG>
+    <REG name="status2" address="69" length="48"><FIELD name="status2"  pos="00" width="48"/></REG>
+  
+</REGISTERS>
