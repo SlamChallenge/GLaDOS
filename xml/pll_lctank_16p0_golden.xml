@@ -1,0 +1,86 @@
+<REGISTERS>
+    <REG name="pll" address="28" length="256"> 
+        <FIELD name="analogtune"             pos="000" width="11" value="00000000000"    definition="Refclk select 0(differential cml) 1(se cmos)" />
+		<FIELD name="atstsel"                pos="011" width="04" value="0101"          definition="Backwards" />
+		<FIELD name="bgoffset"               pos="015" width="04" value="0000"          definition="Bandgap Offset: Backwards" />
+		<FIELD name="burnin_mode_dc"         pos="019" width="01" value="0"             definition="NONE" />
+		<FIELD name="ccalbandsel"            pos="020" width="04" value="0000"          definition="Band Select" />
+		<FIELD name="ccalcvhold"             pos="024" width="01" value="0"             definition="CVHold. Tie filter nodes together. Crossbar" />
+		<FIELD name="ccalfmax"               pos="025" width="01" value="0"             definition="NONE" />
+		<FIELD name="ccalfmin"               pos="026" width="01" value="0"             definition="NONE" />
+		<FIELD name="ccalload"               pos="027" width="01" value="0"             definition="NONE" />
+		<FIELD name="ccalmeth"               pos="028" width="01" value="0"             definition="NONE" />
+		<FIELD name="cpisel"                 pos="029" width="03" value="011"           definition="CPI Select" />
+		<FIELD name="csel"                   pos="032" width="03" value="000"           definition="NONE" />
+		<FIELD name="divselfb"               pos="035" width="09" value="110100100"     definition="Feedback Divider Select." />
+		<FIELD name="enable"                 pos="044" width="01" value="1"             definition="NONE" />
+		<FIELD name="reset"                  pos="045" width="01" value="0"             definition="NONE" />
+		<FIELD name="reset"                  pos="045" width="01" value="0"             definition="NONE" />
+		<FIELD name="pclkdifsel"             pos="046" width="01" value="1"             definition="NONE" />
+		<FIELD name="pclksel"                pos="047" width="02" value="01"            definition="0(pllout), 1(refclk), 2(div6 pllout), 3,(fbclk)" />
+		<FIELD name="pllbypassn"             pos="049" width="01" value="1"             definition="NONE" />
+		<FIELD name="none_bit51:52"          pos="050" width="02" value="10"            definition="NONE" />
+		<FIELD name="spediv"                 pos="052" width="05" value="11110"         definition="NONE" />
+		<FIELD name="selprefb"               pos="057" width="01" value="0"             definition="NONE" />
+		<FIELD name="selprespe"              pos="058" width="01" value="1"             definition="NONE" />
+		<FIELD name="vcosel"                 pos="059" width="01" value="0"             definition="0(LC Tank), 1(Ring)" />
+		<FIELD name="vcorange"               pos="060" width="02" value="10"            definition="0x(Low Speed - 26G,20G,16G) 1x(high speed - 26G)" />
+		<FIELD name="vregbypass"             pos="062" width="01" value="0"             definition="Voltage Regulator Bypass." />
+		<FIELD name="vregenable_n"           pos="063" width="01" value="0"             definition="Voltage Regulator Enable. Active Low" />
+		<FIELD name="cmlen"                  pos="064" width="01" value="0"             definition="NONE" />
+		<FIELD name="rdiv"                   pos="065" width="04" value="0000"          definition="Must be 0, else we will use the refclk divider." />
+		<FIELD name="rsel"                   pos="069" width="02" value="00"            definition="NONE" />
+		<FIELD name="calreq"                 pos="071" width="01" value="0"             definition="NONE" />
+		<FIELD name="calrecal"               pos="072" width="01" value="0"             definition="NONE" />
+		<FIELD name="func_scan_in"           pos="073" width="01" value="0"             definition="NONE" />
+		<FIELD name="gptr_scan_in"           pos="074" width="01" value="0"             definition="NONE" />
+		<FIELD name="pll_se_2"               pos="075" width="01" value="0"             definition="NONE" />
+		<FIELD name="lcb_gptr_sl_hld_2"      pos="076" width="01" value="0"             definition="NONE" />
+		<FIELD name="scan_diag_dc"           pos="077" width="01" value="0"             definition="NONE" />
+		<FIELD name="sdis_dc_n"              pos="078" width="01" value="0"             definition="NONE" />
+		<FIELD name="pll_muxsel_dc"          pos="079" width="01" value="0"             definition="NONE" />
+		<FIELD name="async_tclk"             pos="080" width="01" value="0"             definition="NONE" />
+		<FIELD name="pll_ccflush_dc"         pos="081" width="01" value="0"             definition="NONE" />
+		<FIELD name="pll_sl_hld_2"           pos="082" width="01" value="0"             definition="NONE" />
+		<FIELD name="seld2spr"               pos="083" width="01" value="0"             definition="NONE" />
+		<FIELD name="selpfdpw"               pos="084" width="01" value="0"             definition="NONE" />
+		<FIELD name="syncen"                 pos="085" width="01" value="1"             definition="NONE" />
+		<FIELD name="frac_sscgen"                 pos="086" width="01" value="0"              definition="NONE" />
+		<FIELD name="frac_cmlen133"               pos="087" width="01" value="1"              definition="NONE" />
+		<FIELD name="frac_cmlen156"               pos="088" width="01" value="1"              definition="NONE" />
+		<FIELD name="frac_ss_lock_gate"           pos="089" width="01" value="0"              definition="NONE" />
+		<FIELD name="frac_ss_divider_step"        pos="090" width="14" value="00000000000000" definition="NONE" />
+		<FIELD name="frac_ss_count_total"         pos="104" width="20" value="00000000000000000000" definition="NONE" />
+		<FIELD name="frac_prop_gain_auto"         pos="124" width="01" value="0"              definition="NONE" />
+		<FIELD name="frac_prop_cancel_lockgate"   pos="125" width="01" value="0"              definition="NONE" />
+		<FIELD name="frac_prop_cnacel_gain_in814f" pos="126" width="12" value="000000000000"  definition="NONE" />
+		<FIELD name="frac_prop_cancel_gaincal_negexponent" pos="138" width="04" value="0000"  definition="NONE" />
+		<FIELD name="frac_prop_cancel_full_loop"  pos="142" width="01" value="0"  definition="NONE" />
+		<FIELD name="frac_prop_cancel_en"         pos="143" width="01" value="0"  definition="NONE" />
+		<FIELD name="frac_prop_cancel_barrel_en"  pos="144" width="01" value="0"  definition="NONE" />
+		<FIELD name="frac_prbs_en"                pos="145" width="01" value="0"  definition="NONE" />
+		<FIELD name="frac_prbs_diff"              pos="146" width="01" value="0"  definition="NONE" />
+		<FIELD name="frac_order_divsd"            pos="147" width="02" value="00"  definition="NONE" />
+		<FIELD name="frac_ld_count_exponent"      pos="149" width="01" value="0"  definition="NONE" />
+		<FIELD name="frac_in_int"                 pos="150" width="08" value="00110010"  definition="NONE" />
+		<FIELD name="frac_in_fraction"            pos="158" width="16" value="0000000000000000"  definition="NONE" />
+		<FIELD name="frac_enable"                 pos="174" width="01" value="1"  definition="NONE" />
+		<FIELD name="frac_clk_en"                 pos="175" width="01" value="0"  definition="NONE" />
+		<FIELD name="frac_ceo_se_cg"              pos="176" width="01" value="0"  definition="NONE" />
+		<FIELD name="filtdivsel"                  pos="177" width="02" value="00"    definition="NONE" />
+		<FIELD name="sst_burnin"                  pos="179" width="1" value="0"    definition="NONE" />		
+		<FIELD name="sst_di_dc_b"                 pos="180" width="1" value="1"    definition="NONE" />	
+		<FIELD name="sst_enable"                  pos="181" width="1" value="1"    definition="NONE" />	
+		<FIELD name="sst_select"                  pos="182" width="2" value="10"    definition="NONE" />	
+		<FIELD name="pllout_enable"               pos="184" width="1" value="1"    definition="NONE" />	
+		<FIELD name="none_bit185:199"             pos="185" width="15" value="000000000000000" definition="NONE" />
+		<FIELD name="last"                        pos="255" width="1" value="1" definition="NONE" />
+    </REG>
+    <REG name="cupll" address="18" length="128">
+        <FIELD name="cupll_test" pos="0" width="1" value="0"    definition="NONE" />	
+    </REG>
+    <REG name="filtpll" address="16" length="128">
+        <FIELD name="filtpll_test" pos="0" width="1" value="0"    definition="NONE" />	
+    </REG>
+
+</REGISTERS>
