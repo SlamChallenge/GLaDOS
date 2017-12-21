@@ -1,4 +1,8 @@
 window.onload=function() {
+		  
+    // refresh this page/data every 5000 ms
+    setInterval(function(){ loadDate(); }, 5000);
+	
     //loadDoc();
     var current_path = window.location.pathname;
     var nav_links = document.getElementsByTagName("A");
