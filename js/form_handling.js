@@ -10,14 +10,32 @@ window.onload=function() {
         }
         else nav_links[i].parentElement.className = "";
     }
-    document.getElementById('sc_form').onsubmit=function() {
-    /* do what you want with the form */
     
-    // Should be triggered on form submit
+    getXMLFiles();
+    
+    document.getElementById('sc_form').onsubmit=function() {
     alert('Caught form submission');
-    // You must return false to prevent the default form behavior
+    runXML();
+    // return false to prevent the default form behavior
     return false;
-  }
+    }
+}
+
+function getXMLFiles() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            var xml_dropdown = document.getElementById('xml_select');
+            var xml_files = this.responseText.split(',');
+            var select_string = '';
+            for (i = 0; i < xml_files.length; i++) {
+                select_string+='<option value="/xml/' + xml_files[i] + '">' +  xml_files[i] + '</option>';
+            }
+            xml_dropdown.innerHTML = select_string;
+        }
+    };
+    xhttp.open('GET', 'php/get_xml_files.php', true);
+    xhttp.send();
 }
 
 function highlightCell(cell_id) {
@@ -78,9 +96,10 @@ function parseTable() {
         var data_tags = table_rows[i].getElementsByTagName("td");
         xmlstring +='\t\t<FIELD';
         xmlstring +=' name="' + data_tags[0].innerHTML + '"';
-        xmlstring +=' width="' + data_tags[1].getElementsByTagName('input')[0].value + '"';
         xmlstring +=' pos="' + data_tags[2].getElementsByTagName('input')[0].value + '"';
-        xmlstring +=' value="' +  data_tags[5].getElementsByTagName('input')[0].value + '"';
+        xmlstring +=' width="' + data_tags[1].getElementsByTagName('input')[0].value + '"';
+        // TODO - zero pad binary value
+        xmlstring +=' value="' +  data_tags[3].getElementsByTagName('input')[0].value + '"';
         xmlstring +=' definition="' + data_tags[6].getElementsByTagName('input')[0].value + '"';
         xmlstring +='/>\n';
     }
@@ -89,15 +108,11 @@ function parseTable() {
     return xmlstring;
 }
 
-function sendXML(php_file, string) {
-    var http = new XMLHttpRequest();
-    http.open("POST", 'php/'+php_file, true);
-    http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    http.send(string);
-}
-
 function runXML() {
-    sendXML('run_xml.php', 'xml=' + parseTable());
+    var http = new XMLHttpRequest();
+    http.open("POST", 'php/run_xml.php', true);
+    http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    http.send('xml=' + parseTable());
 }
 
 function saveXML() {
@@ -105,6 +120,10 @@ function saveXML() {
     if (filename == null || filename == "") {
         alert("No name entered.");
     } else {
-        sendXML('save_xml.php', 'newfile=' + filename + '&xml=' + parseTable());
-    }   
+        var http = new XMLHttpRequest();
+        http.open("POST", 'php/save_xml.php', false);
+        http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        http.send('newfile=' + filename + '&xml=' + parseTable());
+        getXMLFiles();
+    }  
 }
