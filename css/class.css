@@ -34,3 +34,7 @@
   color: white;
   background-color: aqua;
 }
+
+.pos_cell, .width_cell {
+    display: none;
+}
