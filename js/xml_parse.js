@@ -1,32 +1,9 @@
-function loadDate(){
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      document.getElementById('date').innerHTML = this.responseText;
-    }
-  };
-  xhttp.open('GET', '/php/date.php', true);
-  xhttp.send();
-}
-
-function loadDoc(file){
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      parseXML(this);
-    }
-  };
-  var file = document.getElementById('xml_select').value;
-  xhttp.open('GET', file, true);
-  xhttp.send();
-}
 function parseXML(xml) {
   var i;
   var xmlDoc = xml.responseXML;
   var table='<thead><tr><th>NAME</th><th>BIN</th><th>HEX</th><th>DEC</th><th>DEFINITION</th></tr></thead><tbody>';
   var name, width, def, bin_val, hex_val, dec_val, pos;
   var x = xmlDoc.getElementsByTagName('REG')[0].getElementsByTagName('FIELD');
-  //var x = xmlDoc.getElementsByTagName('FIELD');
   for (i = 0; i <x.length; i++) {
     name    = x[i].getAttribute('name');
     bin_val = x[i].getAttribute('value');

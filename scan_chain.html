@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>GLaDOS Home</title>
+<title>Scan Chain Editor</title>
 <link rel="stylesheet" href="css/class.css">
 <link rel="stylesheet" href="css/id.css">
 <link rel="stylesheet" href="css/element.css">
@@ -10,36 +10,24 @@
     <div id="header" class="row">
             <pre id="date">Apple Pi Piece</pre>
     </div>
-    <div id="navigation" class="column">
-        <ul>
-            <li><a href="/">Wiki</a></li>
-            <li><a href="/scan_chain.html">Scan Chain</a></li>
-        </ul>
-    </div>
+    <div id="navigation" class="column"></div>
     <div id="content" class="column">
         <div id="scan_chain_table">
-            <button id="xml_select_button" onclick="loadDoc()">Load</button>
-            <select id="xml_select">
-                <option value="/xml/txrx_25p6_golden.xml">XML uno</option>
-                <option value="/xml/pll_lctank_16p0_golden.xml">XML dos</option>
-            </select>
-            <form id="sc_form"><table id="sc_table"></table></form>
+        <button id="xml_select_button" onclick="loadDoc()">Load</button>
+        <select id="xml_select"></select>
+            <form id="sc_form">
+                <table id="sc_table"></table>
+            </form>
         </div>
         <div id="message"></div>
     </div>
-    <div id="buttons" class="column">
-        <ul>
-            <li><button type="button" onclick="loadDate()">Measure</button></li>
-            <li><button type="button" onclick="runXML()">Run</button></li>
-            <li><button type="button" onclick="saveXML()">Save</button></li>
-            <li><button type="button">Send Scan Chain</button></li>
-            <li><button type="button">Reset Scan Chain</button></li>
-            <li><button type="button">Cal Req</button></li>
-            <li><button type="button">Init Calblock</button></li>
-        </ul>
-    </div>
+    <div id="buttons" class="column"></div>
 </div>
 </body>
+<script src="/js/scan_chain_onload.js"></script>
 <script src="/js/xml_parse.js"></script>
-<script src="/js/form_handling"></script>
+<script src="/js/gets.js"></script>
+<script src="/js/other.js"></script>
+<script src="/js/button_functions.js"></script>
+<script src="/js/form_handling.js"></script>
 </html>

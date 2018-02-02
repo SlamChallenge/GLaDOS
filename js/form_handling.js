@@ -1,43 +1,3 @@
-window.onload=function() {
-    //loadDoc();
-    var current_path = window.location.pathname;
-    var nav_links = document.getElementsByTagName("A");
-    for (var i = 0; i < nav_links.length; i++) {
-        console.log(nav_links[i].pathname);
-        if ( nav_links[i].pathname === current_path ) {
-            nav_links[i].parentElement.className = "active";
-            break;
-        }
-        else nav_links[i].parentElement.className = "";
-    }
-    
-    getXMLFiles();
-    
-    document.getElementById('sc_form').onsubmit=function() {
-    alert('Caught form submission');
-    runXML();
-    // return false to prevent the default form behavior
-    return false;
-    }
-}
-
-function getXMLFiles() {
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            var xml_dropdown = document.getElementById('xml_select');
-            var xml_files = this.responseText.split(',');
-            var select_string = '';
-            for (i = 0; i < xml_files.length; i++) {
-                select_string+='<option value="/xml/' + xml_files[i] + '">' +  xml_files[i] + '</option>';
-            }
-            xml_dropdown.innerHTML = select_string;
-        }
-    };
-    xhttp.open('GET', 'php/get_xml_files.php', true);
-    xhttp.send();
-}
-
 function highlightCell(cell_id) {
     document.getElementById(cell_id).style.backgroundColor = "yellow";
 }
@@ -106,24 +66,4 @@ function parseTable() {
     xmlstring +='\t</REG>\n</REGISTERS>'
     console.log(xmlstring);
     return xmlstring;
-}
-
-function runXML() {
-    var http = new XMLHttpRequest();
-    http.open("POST", 'php/run_xml.php', true);
-    http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    http.send('xml=' + parseTable());
-}
-
-function saveXML() {
-    var filename = prompt("New XML file name", "custom.xml");
-    if (filename == null || filename == "") {
-        alert("No name entered.");
-    } else {
-        var http = new XMLHttpRequest();
-        http.open("POST", 'php/save_xml.php', false);
-        http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        http.send('newfile=' + filename + '&xml=' + parseTable());
-        getXMLFiles();
-    }  
 }
