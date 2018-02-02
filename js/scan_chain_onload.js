@@ -15,4 +15,7 @@ window.onload=function() {
     // return false to prevent the default form behavior
     return false;
     }
+    
+    loadMeas();
+    window.setInterval(loadMeas, 30000);
 }

@@ -1,3 +1,4 @@
+/* applies to everything */
 .window {
   background-color: white;
   box-sizing: border-box;
@@ -7,6 +8,7 @@
   padding: 0;
 }
 
+/* applies to header */
 .row {
   text-align: center;
   margin: 0 auto;
@@ -14,9 +16,10 @@
   box-sizing: border-box;
   height: 5%;
   width: 100%;
-  overflow-x: auto;
+  overflow: none;
 }
 
+/* applies to nav, content, and buttons */
 .column {
   text-align: center;
   box-sizing: border-box;
@@ -30,11 +33,33 @@
   overflow-y: auto;
 }
 
+/* applies nav for current page */
 .active {
-  color: white;
   background-color: aqua;
 }
 
+.name_cell {
+  width: 20%;
+}
+
+.bin_cell {
+  width: 20%;
+}
+
+.dec_cell {
+  width: 10%;
+}
+
+.hex_cell {
+  width: 10%;
+}
+
+.def_cell {
+  width: 40%;
+}
+
+/* hides cells for position and width */
 .pos_cell, .width_cell {
     display: none;
+    width: 0;
 }
