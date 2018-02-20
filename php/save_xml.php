@@ -1,0 +1,1 @@
+<?php file_put_contents('../xml/'.$_POST['newfile'],$_POST['xml']); ?>

@@ -1,3 +1,4 @@
+
 window.onload=function() {
 		  
     // refresh this page/data every 5000 ms
@@ -24,11 +25,17 @@ window.onload=function() {
   }
 }
 
-function cellChange(name, radix, width) {
+function checkNumCell(name, radix) {
 
-    var bin_cell = document.getElementById(name + "_bin");
-    var hex_cell = document.getElementById(name + "_hex");
-    var dec_cell = document.getElementById(name + "_dec");
+    var bin_id = name+"_bin";
+    var hex_id = name+"_hex";
+    var dec_id = name+"_dec";
+    
+    var bin_cell = document.getElementById(bin_id);
+    var hex_cell = document.getElementById(hex_id);
+    var dec_cell = document.getElementById(dec_id);
+    
+    var width    = document.getElementById(name+"_width").value;   
     
     // Update the peer cell values
     switch(radix) {
@@ -59,8 +66,27 @@ function cellChange(name, radix, width) {
         dec_cell.style.backgroundColor = "tomato";
     }
     else {
-        bin_cell.style = undefined;
-        hex_cell.style = undefined;
-        dec_cell.style = undefined;
+        highlightCell(bin_id);
+        highlightCell(hex_id);
+        highlightCell(dec_id);
     }
+}
+
+function parseTable() {
+    var table_rows = document.getElementById("sc_table").getElementsByTagName("tr");
+    var xmlstring = '<REGISTERS>\n\t<REG name="pll" address="28" length="256">\n'
+    for (i = 1; i < table_rows.length; i++) {
+        var data_tags = table_rows[i].getElementsByTagName("td");
+        xmlstring +='\t\t<FIELD';
+        xmlstring +=' name="' + data_tags[0].innerHTML + '"';
+        xmlstring +=' pos="' + data_tags[2].getElementsByTagName('input')[0].value + '"';
+        xmlstring +=' width="' + data_tags[1].getElementsByTagName('input')[0].value + '"';
+        // TODO - zero pad binary value
+        xmlstring +=' value="' +  data_tags[3].getElementsByTagName('input')[0].value + '"';
+        xmlstring +=' definition="' + data_tags[6].getElementsByTagName('input')[0].value + '"';
+        xmlstring +='/>\n';
+    }
+    xmlstring +='\t</REG>\n</REGISTERS>'
+    console.log(xmlstring);
+    return xmlstring;
 }
