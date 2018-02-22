@@ -16,7 +16,7 @@
   box-sizing: border-box;
   height: 5%;
   width: 100%;
-  overflow: none;
+  overflow: auto;
 }
 
 /* applies to nav, content, and buttons */
@@ -58,8 +58,8 @@
   width: 40%;
 }
 
-/* hides cells for position and width */
-.pos_cell, .width_cell {
+/* hides cells for position, width, and script path */
+.pos_cell, .width_cell, .hidden {
     display: none;
     width: 0;
 }

@@ -28,7 +28,7 @@ div#scan_chain_table {
     overflow: scroll;
 }
 
-div#message {
+div#message_box {
     height: 20%;
     width: 100%;
     overflow: scroll;
@@ -56,4 +56,23 @@ table#header_table td {
     text-align: center;
     width: 25%;
     border: 0;
+}
+
+table#sc_table {
+    width: 100%;
+}
+
+table#test_table {
+    width: 50%;
+    margin: auto;
+}
+
+table#sc_table,th,td {
+    /*! border: 1px solid black; */
+    border-collapse: collapse; /* merges borders */
+    text-align: left;
+}
+
+table#sc_table tr:hover {
+	background-color: lightgray;
 }

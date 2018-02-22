@@ -2,7 +2,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=ISO-8859-1"> 
 <html lang="en-US">
 <head>
-<title>Scan Chain Editor</title>
+<title>Test Selector</title>
 <link rel="stylesheet" href="css/master.css">
 </head>
 <body>
@@ -12,14 +12,12 @@
     </div>
     <div id="navigation" class="column"></div>
     <div id="content" class="column">
-        <div id="scan_chain_table">
-        <select id="xml_select"></select>
-        <button id="xml_select_button" onclick="loadXmlToHtmlTable()">Load XML</button>
-            <form id="sc_form">
-                <table id="sc_table"></table>
-            </form>
+        <div id="test_viewer" style="height: 50%;">
+            <select id="test_select" onchange="populateTestSelect()"></select>
+            <button id="test_select_button" onclick="runTest()">Run Test</button>
+            <table id="test_table"></table>
         </div>
-        <div id="message_box"></div>
+        <div id="message_box" style="height:50%"></div>
     </div>
     <div id="buttons" class="column"></div>
 </div>

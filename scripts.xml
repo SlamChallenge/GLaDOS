@@ -1,0 +1,98 @@
+<tests>
+    <test>
+        <name>Varactor Curve</name>
+        <path>../rch-wafer-lab/14nm_dd2_kerf_pi/tests/</path>
+        <script>varactor_curve.py</script>
+        <parameters>
+            <xml>pll_lctank_16p0_golden.xml</xml>
+        </parameters>
+        <description>Plot a varactor curve</description>
+    </test>
+    <test>
+        <name>Varactor Curve - Filter PLL</name>
+        <path>../rch-wafer-lab/14nm_dd2_kerf_pi/tests/</path>
+        <script>varactor_curve_FILTPLL.py</script>
+        <parameters>
+            <xml>txrx_25p6_golden.xml</xml>
+        </parameters>
+        <description>Plot a varactor curve for the filter PLL</description>
+    </test>
+    <test>
+        <name>Varactor Curve - JB</name>
+        <path>../rch-wafer-lab/14nm_dd2_kerf_pi/tests/</path>
+        <script>varactor_curve_JB.py</script>
+        <parameters>
+            <xml>txrx_25p6_golden.xml</xml>
+        </parameters>
+        <description>Plot a varactor curve for the filter PLL</description>
+    </test>
+    <test>
+        <name>SPI Test</name>
+        <path>../rch-wafer-lab/14nm_dd2_kerf_pi/tests/</path>
+        <script>spitest.py</script>
+        <parameters></parameters>
+        <description></description>
+    </test>
+    <test>
+        <name>Set Reference Clock</name>
+        <path>../rch-wafer-lab/14nm_dd2_kerf_pi/</path>
+        <script>set_refclk.py</script>
+        <parameters>
+            <frequency></frequency>
+            <units>
+                <option>ghz</option>
+                <option>mhz</option>
+                <option>khz</option>
+            </units>
+        </parameters>
+        <description></description>
+    </test>
+    <test>
+        <name>Set Power Supply Voltage</name>
+        <path>../rch-wafer-lab/14nm_dd2_kerf_pi/</path>
+        <script>set_voltage.py</script>
+        <parameters>
+            <channel>
+                <option>1</option>
+                <option>2</option>
+            </channel>
+            <voltage></voltage>
+        </parameters>
+        <description></description>
+    </test>
+    <test>
+        <name>Initialize PLL</name>
+        <path>../rch-wafer-lab/14nm_dd2_kerf_pi/</path>
+        <script>pll_init.py</script>
+        <parameters></parameters>
+        <description></description>
+    </test>
+    <test>
+        <name>Characterize Jitter</name>
+        <path>../rch-wafer-lab/14nm_dd2_kerf_pi/scripts</path>
+        <script>jitter_char.py</script>
+        <parameters></parameters>
+        <description></description>
+    </test>
+    <test>
+        <name>Sweep PLL Bands</name>
+        <path>../rch-wafer-lab/14nm_dd2_kerf_pi/scripts</path>
+        <script>pll_bandsweep.py</script>
+        <parameters></parameters>
+        <description></description>
+    </test>
+    <test>
+        <name>Characterize Resistor Divider</name>
+        <path>../rch-wafer-lab/14nm_dd2_kerf_pi/scripts</path>
+        <script>rdiv_char.py</script>
+        <parameters></parameters>
+        <description></description>
+    </test>
+    <test>
+        <name>Shmoo Resistor Divider</name>
+        <path>../rch-wafer-lab/14nm_dd2_kerf_pi/scripts</path>
+        <script>rdiv_schmoo.py</script>
+        <parameters></parameters>
+        <description></description>
+    </test>
+</tests>

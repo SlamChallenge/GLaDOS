@@ -3,6 +3,12 @@ body {
     margin: 0;
 }
 
+pre {
+    text-align: left;
+    margin: 0 auto;
+    padding: 1%;
+}
+
 ul {
     margin: 0 auto;
     width: 100%;
@@ -31,17 +37,8 @@ table {
     width: 100%;
 }
 
-table,th,td {
-    border: 1px solid black;
-    border-collapse: collapse; /* merges borders */
-}
-
-table input {
+input {
     width: 100%;
-}
-
-table#sc_table tr:hover {
-	background-color: lightgray;
 }
 
 input:focus {

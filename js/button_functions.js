@@ -1,56 +1,101 @@
-function loadMeas(){
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      document.getElementById('header_table').innerHTML = this.responseText;
-    }
-  };
-  xhttp.open('GET', '/php/get_header.php', true);
-  xhttp.send();
+function getHeaderMeasurements() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById('header_table').innerHTML = this.responseText;
+        }
+    };
+    xhttp.open('POST', '/php/pi_functions.php', true);
+    xhttp.send('function=piGetHeaderMeasurements');
 }
 
-function loadDate(){
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      document.getElementById('date').innerHTML = this.responseText;
-    }
-  };
-  xhttp.open('GET', '/php/date.php', true);
-  xhttp.send();
+function loadXmlToHtmlTable() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            writeLog('Processing xml file ' + this.responseURL);
+            var html_table = convertRegisterXmlToHtmlTable(this);
+            document.getElementById('sc_table').innerHTML = html_table;
+        }
+    };
+    var file = '/xml/' + document.getElementById('xml_select').value;
+    writeLog('Loading xml file ' + file);
+    xhttp.open('GET', file, true);
+    xhttp.send();
 }
 
-function loadDoc(file){
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      parseXML(this);
-    }
-  };
-  var file = document.getElementById('xml_select').value;
-  xhttp.open('GET', file, true);
-  xhttp.send();
-}
-
-function runXML() {
+function sendXML() {
+    writeLog('Saving and running quick_run.xml');
+    saveHtmlTableToFile('quick_run.xml');
     var http = new XMLHttpRequest();
-    http.onreadystatechange = function() {
-        document.getElementById('message').innerHTML = '<pre>' + this.responseText + '</pre>';
-    }
-    http.open("POST", 'php/run_xml.php', true);
+    http.open("POST", 'php/pi_functions.php', true);
     http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    http.send('xml=' + parseTable());
+    http.send('function=piRunPythonScript&script=../rch-wafer-lab/14nm_dd2_kerf_pi/iowrite.py&args=xml/quick_run.xml');
 }
 
-function saveXML() {
-    var filename = prompt("New XML file name", "custom.xml");
-    if (filename == null || filename == "") {
+function saveHtmlTableToFile(filename) {
+    //Check than an xml has been loaded
+    if( document.getElementById('sc_table').childElementCount == 0 ) return;
+    if ( filename == undefined ) {
+      var filename = prompt("New XML file name", "custom.xml");
+    }
+    if ( filename == null || filename == "" ) {
         alert("No name entered.");
-    } else {
+    } else if ( filename.search(/\s/) != -1 ) {
+        alert('Cannot contain spaces');
+    } 
+    else if ( filename.search('\.xml$') == -1 ) {
+        alert('Must be an .xml file');
+    }
+    else {
         var http = new XMLHttpRequest();
-        http.open("POST", 'php/save_xml.php', false);
+        http.open("POST", 'php/pi_functions.php', false);
         http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        http.send('newfile=' + filename + '&xml=' + parseTable());
-        getXMLFiles();
-    }  
+        writeLog('Saving new xml ' + filename);
+        http.send('function=piWriteFile&file=/xml/' + filename + '&string=' + convertHtmlTabletoRegisterXml());
+        populateXmlSelect(false);
+        setDropdownSelect('xml_select', filename);
+    }
+}
+
+function writeLog(string, mode = 'append') {
+    if ( string === undefined ) {
+        string = document.getElementById('message_input').value;
+    }
+    var http = new XMLHttpRequest();
+    http.open("POST", 'php/pi_functions.php', true);
+    http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    http.send('function=piWriteFile&file=/logs/website.log&mode=' + mode + '&string=' + string + '\n');
+}
+
+function resetStream() {
+    document.getElementById('message').innerHTML = '';
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", 'php/stream_log.php', true);
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhr.send('reset');
+}
+
+function clearLog(string) {
+    if ( string === undefined ) {
+        string = "Log cleared on " + getDate();
+    }
+    writeLog(string, 'overwrite');
+    resetStream();
+}
+
+function runTest() {
+    var http = new XMLHttpRequest();
+    http.open("POST", 'php/pi_functions.php', true);
+    http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    var path = document.getElementById('test_path').innerHTML;
+    var script = document.getElementById('test_script').innerHTML;
+    var table_rows = document.getElementById('test_table').getElementsByTagName('tr');
+    var args = '';
+    // start after the path and script. Quit before the description
+    for ( var i = 2; i < table_rows.length - 1; i++ ) {
+        var row_cells = table_rows[i].getElementsByTagName('td');
+        args += row_cells[1].firstChild.value + ' ';
+    }
+    http.send('function=piRunPythonScript&script=' + path + script + '&args=' + args );
 }
